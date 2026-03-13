@@ -200,7 +200,14 @@
             
             container.innerHTML = "";
 
-            if (estado === "ESPERA" || estado === "PROCESANDO") {
+            if (estado === "ESPERA") {
+                container.innerHTML = `
+                    <h2>✋ Atención al frente</h2>
+                    <div class="spinner"></div>
+                    <p>La sesion esta por comenzar (Sesión: ${sesionActivaID || 'Cargando...'})</p>
+                `;
+            }
+            else if (estado === "PROCESANDO") {
                 container.innerHTML = `
                     <h2>✋ Atención al frente</h2>
                     <div class="spinner"></div>
@@ -348,5 +355,6 @@
     </script>
 </body>
 </html>
+
 
 
